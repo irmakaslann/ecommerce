@@ -1,7 +1,10 @@
-package com.urunsatisi.urunsatisi.entities;
+package com.urunsatisi.urunsatisi.model;
 
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -21,7 +24,8 @@ public class Customer  {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "name")
+    @Column(name = "name",nullable = false)
+    @NotBlank
     private String name;
 
    /* @Column(name = "yearOfBirth")

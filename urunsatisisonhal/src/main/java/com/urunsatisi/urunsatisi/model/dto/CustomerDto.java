@@ -1,4 +1,4 @@
-package com.urunsatisi.urunsatisi.dto;
+package com.urunsatisi.urunsatisi.model.dto;
 
 import lombok.Data;
 

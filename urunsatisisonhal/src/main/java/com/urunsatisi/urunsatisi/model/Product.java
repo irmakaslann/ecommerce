@@ -1,7 +1,10 @@
-package com.urunsatisi.urunsatisi.entities;
+package com.urunsatisi.urunsatisi.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.List;
 
 @Entity
 @Builder
@@ -27,8 +30,11 @@ public class Product {
     @JoinColumn(name = "CATEGORY_ID", referencedColumnName = "id")
     private Category category;
 
-    @ManyToOne
-    @JoinColumn(name = "CART_ID",referencedColumnName = "id")
-    private Cart cart;
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "product_cart",
+            joinColumns = @JoinColumn(name = "product_id"),
+            inverseJoinColumns = @JoinColumn(name = "cart_id"))
+    @JsonIgnore
+    private List<Cart> carts;
 
 }

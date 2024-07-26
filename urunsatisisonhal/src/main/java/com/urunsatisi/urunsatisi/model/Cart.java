@@ -1,4 +1,4 @@
-package com.urunsatisi.urunsatisi.entities;
+package com.urunsatisi.urunsatisi.model;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -22,12 +22,13 @@ public class Cart {
     private int count;
 
     @ManyToOne
-    @JoinColumn(name = "customer_id",referencedColumnName = "id")
+    @JoinColumn(name = "customer_id", referencedColumnName = "id")
     private Customer customer;
 
-    @OneToMany(mappedBy = "cart", fetch = FetchType.EAGER)
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "product_cart",
+            joinColumns = @JoinColumn(name = "cart_id"),
+            inverseJoinColumns = @JoinColumn(name = "product_id"))
     private List<Product> products;
-
-
 
 }

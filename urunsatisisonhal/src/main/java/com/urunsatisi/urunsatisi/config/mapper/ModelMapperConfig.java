@@ -1,4 +1,4 @@
-package com.urunsatisi.urunsatisi.config;
+package com.urunsatisi.urunsatisi.config.mapper;
 
 import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;
