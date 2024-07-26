@@ -1,4 +1,4 @@
-package com.urunsatisi.urunsatisi.entities;
+package com.urunsatisi.urunsatisi.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

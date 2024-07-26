@@ -1,4 +1,4 @@
-package com.urunsatisi.urunsatisi.entities;
+package com.urunsatisi.urunsatisi.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
@@ -19,7 +19,7 @@ public class Category {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "categoryname")
+    @Column(name = "categoryname", unique = true)
     private String name;
 
     @JsonIgnore
